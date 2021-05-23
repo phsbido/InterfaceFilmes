@@ -7,7 +7,7 @@ import java.awt.event.MouseListener;
 
 import javax.swing.JOptionPane;
 
-import br.com.fiap.pedro.movies.dao.Dao;
+import br.com.fiap.pedro.movies.dao.FilmeDAO;
 import br.com.fiap.pedro.movies.model.Filme;
 import br.com.fiap.pedro.movies.util.StarRater;
 
@@ -20,7 +20,7 @@ public class BotaoListener implements ActionListener, MouseListener {
 	private MeuRadioGroup radioOndeAssistir;
 	private MeuCheckBox checkAssistido;
 	private StarRater avaliacao;	
-	private Dao dao = new Dao();	
+	private FilmeDAO dao = new FilmeDAO();	
 
 	public BotaoListener(MeuTextField fieldTitulo, MeuTextArea fieldSinopse, MeuComboBox comboGeneros,
 			MeuRadioGroup radioOndeAssistir, MeuCheckBox checkAssistido, StarRater avaliacao) {

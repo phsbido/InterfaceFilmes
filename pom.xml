@@ -27,20 +27,21 @@
 		</plugins>
 	</build>
 	<dependencies>
-	
+
 		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
 			<version>5.4.31.Final</version>
 		</dependency>
-		
-		<!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
+
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<version>1.4.200</version>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.25</version>
 		</dependency>
+
 
 	</dependencies>
 </project>
