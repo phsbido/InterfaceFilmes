@@ -73,6 +73,10 @@ public class Filme {
 	public boolean isAssistido() {
 		return assistido;
 	}
+	
+	public String getAssistido() {
+		return this.isAssistido() ? "Sim" : "Não";
+	}
 
 	public void setAssistido(boolean assistido) {
 		this.assistido = assistido;

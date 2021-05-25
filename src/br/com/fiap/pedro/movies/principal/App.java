@@ -32,12 +32,12 @@ import br.com.fiap.pedro.movies.model.Filme;
 import br.com.fiap.pedro.movies.util.Paleta;
 import br.com.fiap.pedro.movies.util.StarRater;
 
-public class App {
+public class App extends JFrame implements ActionListener{
 
 	private static final String PATH_POSTER_ILHA_DO_MEDO = "src/br/com/fiap/pedro/movies/img/posterIlhaDoMedo.jpg";
 	private DefaultTableModel modelo = new DefaultTableModel();
-	private JButton carregar = new JButton("carregar");
-	private JButton apagar = new JButton("apagar");
+	private JButton carregar = new JButton("Carregar");
+	private JButton apagar = new JButton("Apagar");
 	private JTable tabela = new JTable(modelo);
 
 	public static void main(String[] args) {
@@ -116,7 +116,7 @@ public class App {
 		painelBotao.add(botaoCancelar);
 
 		JPanel painelLista = new JPanel();
-		painelLista.setLayout(new FlowLayout());
+		painelLista.setLayout(new GridLayout(2, 1));
 
 		modelo.addColumn("Id");
 		modelo.addColumn("Título");
@@ -129,7 +129,7 @@ public class App {
 		carregarDados();
 
 		painelLista.add(new JScrollPane(tabela));
-
+		
 		JPanel botoes = new JPanel();
 		botoes.add(apagar);
 		botoes.add(carregar);
@@ -153,12 +153,17 @@ public class App {
 
 	private void carregarDados() {
 		modelo.setNumRows(0);
-
 		FilmeDAO dao = new FilmeDAO();
 		List<Filme> lista = dao.buscarTodos();
-
 		for (Filme filme : lista) {
-			String[] linha = { filme.getId().toString(), };
+			String[] linha = { 
+					filme.getId().toString(),
+					filme.getTitulo(),
+					filme.getSinopse(),
+					filme.getGenero(),
+					filme.getOndeAssistir(),
+					filme.getAssistido(),
+					filme.getAvaliacao() + " estrelas"};
 			modelo.addRow(linha);
 		}
 	}
@@ -184,11 +189,10 @@ public class App {
 		FilmeDAO dao = new FilmeDAO();
 		int linha = tabela.getSelectedRow();
 		String id = tabela.getValueAt(linha, 0).toString();
-		Filme Filme = dao.buscarPorId(Long.valueOf(id));
+		Filme filme = dao.buscarPorId(Long.valueOf(id));
 		int resposta = JOptionPane.showConfirmDialog(null, "Tem certeza que quer apagar o Filme selecionado?");
-		//dao.apagarPeloId(Long.valueOf(id));
 		if (resposta == JOptionPane.YES_OPTION) {
-			dao.apagar(Filme);
+			dao.apagar(filme);
 			carregarDados();
 		}
 	}

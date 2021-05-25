@@ -7,11 +7,10 @@ import javax.persistence.Persistence;
 public class JPAUtil {
 	
 	private static EntityManager manager;
-	private static EntityManagerFactory factory = Persistence.createEntityManagerFactory("fiap-movie");
+	private static EntityManagerFactory factory = Persistence.createEntityManagerFactory("fiapmovie");
 
 	public static EntityManager getManager() {
 		if (manager == null) manager = factory.createEntityManager();
-		
 		return manager;
 	}
 	

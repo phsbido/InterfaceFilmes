@@ -21,9 +21,9 @@ public class FilmeDAO {
 		//return retornarDadosDeTeste();
 	}
 	
-	public void apagar(Filme Filme) {
+	public void apagar(Filme filme) {
 		manager.getTransaction().begin();
-		manager.remove(Filme);
+		manager.remove(filme);
 		manager.getTransaction().commit();
 	}
 
@@ -41,6 +41,9 @@ public class FilmeDAO {
 	}
 
 	public void create(Filme filme) {
+		manager.getTransaction().begin();
+		manager.persist(filme);
+		manager.getTransaction().commit();
 		
 	}
 
