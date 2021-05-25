@@ -1,0 +1,17 @@
+br\com\fiap\pedro\movies\util\StarRater$2.class
+br\com\fiap\pedro\movies\util\StarRater$1.class
+br\com\fiap\pedro\movies\componentes\BotaoListener.class
+br\com\fiap\pedro\movies\componentes\MeuComboBox.class
+br\com\fiap\pedro\movies\dao\FilmeDAO.class
+br\com\fiap\pedro\movies\util\StarRater$StarListener.class
+br\com\fiap\pedro\movies\principal\App.class
+br\com\fiap\pedro\movies\util\JPAUtil.class
+br\com\fiap\pedro\movies\componentes\MeuTextArea.class
+br\com\fiap\pedro\movies\componentes\MeuLabel.class
+br\com\fiap\pedro\movies\componentes\MeuTextField.class
+br\com\fiap\pedro\movies\componentes\MeuCheckBox.class
+br\com\fiap\pedro\movies\model\Filme.class
+br\com\fiap\pedro\movies\componentes\MeuRadioGroup.class
+br\com\fiap\pedro\movies\util\Paleta.class
+br\com\fiap\pedro\movies\util\StarRater.class
+br\com\fiap\pedro\movies\util\BordaFactory.class
